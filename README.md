@@ -1,9 +1,8 @@
+# 🌌 OrionMD
 
-# 🌌 Orion Editor
+[![Licencia: MIT](https://img.shields.io/badge/Licencia-MIT-blue.svg)](https://opensource.org/licenses/MIT) [![PRs Bienvenidos](https://img.shields.io/badge/PRs-bienvenidos-brightgreen.svg)](https://archesv.xyz/)
 
-[![Licencia: MIT](https://img.shields.io/badge/Licencia-MIT-blue.svg)](https://opensource.org/licenses/MIT) [![PRs Bienvenidos](https://img.shields.io/badge/PRs-bienvenidos-brightgreen.svg)](http://makeapullrequest.com)
-
-**Orion Editor** es un editor de Markdown moderno, elegante y altamente personalizable, construido con React y efectos 3D interactivos.
+**Orion Editor** es un editor de Markdown web el cual puedes exportar tus notas en un HTML.
 
 ---
 
@@ -39,16 +38,16 @@
 
 ---
 
-## 🛠️ Tecnología y Herramientas
+## 🛠️ Mas detalles
 
-- **Lenguaje**: TypeScript  
-- **Framework**: React (Hooks & Context API)  
-- **Bundler**: Vite  
-- **Animaciones**: Framer Motion  
-- **Renderizado 3D**: React Three Fiber & Drei  
-- **Drag & Drop**: dnd-kit  
-- **Markdown**: react-markdown, remark-gfm, marked  
-- **Utilidades**: jszip, file-saver, color  
+- **Lenguaje**: TypeScript
+- **Framework**: React (Hooks & Context API)
+- **Bundler**: Vite
+- **Animaciones**: Framer Motion
+- **Renderizado 3D**: React Three Fiber & Drei
+- **Drag & Drop**: dnd-kit
+- **Markdown**: react-markdown, remark-gfm, marked
+- **Utilidades**: jszip, file-saver, color
 
 Los estilos se implementan con CSS plano y Variables CSS para cambiar temas en tiempo real.
 
@@ -56,21 +55,21 @@ Los estilos se implementan con CSS plano y Variables CSS para cambiar temas en t
 
 ## 🏗️ Arquitectura
 
-1. **Estado global**  
-   - `ProjectContext.tsx` gestiona la lista de proyectos, el documento activo y las acciones CRUD.
-   - Uso de React Context para compartir estado y funciones entre componentes.
+1. **Estado global**
+    - `ProjectContext.tsx` gestiona la lista de proyectos, el documento activo y las acciones CRUD.
+    - Uso de React Context para compartir estado y funciones entre componentes.
 
-2. **Temas dinámicos**  
-   - Un `useEffect` detecta cambios en los colores de fondo.
-   - La librería `color` calcula variantes de acento y actualiza Variables CSS en `<html>`.
+2. **Temas dinámicos**
+    - Un `useEffect` detecta cambios en los colores de fondo.
+    - La librería `color` calcula variantes de acento y actualiza Variables CSS en `<html>`.
 
-3. **Componentes clave**  
-   - **App.tsx**: Define el layout principal (barra lateral, área de edición, panel de ajustes).  
-   - **Sidebar.tsx**: Lista de proyectos, importación/exportación y controles principales.  
-   - **Editor.tsx**: Secciones editables con lógica de arrastrar y soltar.  
-   - **Section.tsx**: Tarjeta individual para cada bloque de Markdown.  
-   - **Preview.tsx**: Renderizado en tiempo real usando `react-markdown` y un parser personalizado para spoilers.  
-   - **Scene.tsx**: Escena 3D independiente con React Three Fiber.
+3. **Componentes clave**
+    - **App.tsx**: Define el layout principal (barra lateral, área de edición, panel de ajustes).
+    - **Sidebar.tsx**: Lista de proyectos, importación/exportación y controles principales.
+    - **Editor.tsx**: Secciones editables con lógica de arrastrar y soltar.
+    - **Section.tsx**: Tarjeta individual para cada bloque de Markdown.
+    - **Preview.tsx**: Renderizado en tiempo real usando `react-markdown` y un parser personalizado para spoilers.
+    - **Scene.tsx**: Escena 3D independiente con React Three Fiber.
 
 ---
 
@@ -103,6 +102,5 @@ Los estilos se implementan con CSS plano y Variables CSS para cambiar temas en t
 
 ## 📜 Licencia
 
-Este proyecto está bajo la **Licencia MIT**. Consulta el archivo `LICENSE` para más información.
-Eres libre de usar, modificar y distribuir el código. ¡Contribuciones siempre bienvenidas!
-
+Este proyecto está bajo la **Licencia MIT**.
+Eres libre de usar, modificar y distribuir el código.

@@ -15,12 +15,12 @@ const spoilerExtension = {
             return {
                 type: 'spoiler',
                 raw: match[0],
-                text: this.lexer.inlineTokens(match[1]),
+                text: (this as any).lexer.inlineTokens(match[1]),
             };
         }
     },
     renderer(token: any) {
-        return `<span class="html-spoiler">${this.parser.parseInline(token.text)}</span>`;
+        return `<span class="html-spoiler">${(this as any).parser.parseInline(token.text)}</span>`;
     }
 };
 

@@ -1,4 +1,4 @@
-import React, { createContext, useState, ReactNode, useEffect } from 'react';
+import React, { createContext, useState, type ReactNode, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import type { Project, Section } from '../types';
 import Color from 'color';

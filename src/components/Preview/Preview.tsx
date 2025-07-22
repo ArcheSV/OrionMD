@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, isValidElement, cloneElement, Children } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { useProject } from '../../hooks/useProject';
@@ -7,7 +7,8 @@ import BlurredText from './BlurredText';
 import '../../styles/markdown.css';
 
 const parseChildrenForSpoiler = (children: React.ReactNode): React.ReactNode => {
-    return React.Children.map(children, (child: any, index) => {
+    return Children.map(children, (child, index) => {
+
         if (typeof child === 'string') {
             const spoilerRegex = /\|\|(.*?)\|\|/g;
             if (!child.match(spoilerRegex)) {
@@ -20,16 +21,22 @@ const parseChildrenForSpoiler = (children: React.ReactNode): React.ReactNode => 
             );
         }
 
-        if (React.isValidElement(child) && child.props.children) {
-            return React.cloneElement(child, {
-                ...child.props,
-                children: parseChildrenForSpoiler(child.props.children),
-            });
+        if (isValidElement(child)) {
+            const props = child.props as { children?: React.ReactNode };
+
+            if (props.children) {
+                return cloneElement(
+                    child,
+                    props,
+                    parseChildrenForSpoiler(props.children)
+                );
+            }
         }
 
         return child;
     });
 };
+
 
 const Preview: React.FC = () => {
     const { activeProject } = useProject();
@@ -44,6 +51,7 @@ const Preview: React.FC = () => {
         li: ({ node, ...props }: any) => <li {...props}>{parseChildrenForSpoiler(props.children)}</li>,
         strong: ({ node, ...props }: any) => <strong {...props}>{parseChildrenForSpoiler(props.children)}</strong>,
         em: ({ node, ...props }: any) => <em {...props}>{parseChildrenForSpoiler(props.children)}</em>,
+
         img: ({node, ...props}: any) => (
             <img
                 style={{ maxWidth: '100%', height: 'auto', display: 'block', borderRadius: '8px' }}

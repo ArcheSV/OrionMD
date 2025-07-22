@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useProject } from '../../hooks/useProject';
 import type { Settings } from '../../types';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, type Variants } from 'framer-motion';
 
-const controlVariants = {
+const controlVariants: Variants = {
     hidden: { opacity: 0, x: 50 },
     visible: (i: number) => ({
         opacity: 1,

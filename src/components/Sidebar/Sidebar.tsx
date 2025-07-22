@@ -1,10 +1,10 @@
 import React, { useRef } from 'react';
+import { motion, AnimatePresence, type Variants } from 'framer-motion';
 import { useProject } from '../../hooks/useProject';
 import { exportToHtml } from '../../utils/exportUtils';
 import { exportProjectAsZip, importProjectFromZip } from '../../utils/projectUtils';
 import type { Project } from '../../types';
 
-import { motion, AnimatePresence } from 'framer-motion';
 const listContainerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -15,7 +15,7 @@ const listContainerVariants = {
     },
 };
 
-const listItemVariants = {
+const listItemVariants: Variants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
         y: 0,
