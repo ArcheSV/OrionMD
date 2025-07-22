@@ -102,5 +102,6 @@ Los estilos se implementan con CSS plano y Variables CSS para cambiar temas en t
 
 ## 📜 Licencia
 
-Este proyecto está bajo la **Licencia MIT**.
-Eres libre de usar, modificar y distribuir el código.
+
+
+Este proyecto está bajo la **Licencia MIT**. Puedes distribuir, contribuir y hacer lo que quieras con el código libremente.
