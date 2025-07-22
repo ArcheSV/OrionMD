@@ -8,7 +8,9 @@
 
 ## [🔗 Demo en Vivo](http://orion.archesv.xyz/)
 
+## ⚠️ RECORDATORIO
 
+Aún no he implementado la posibilidad de que los proyectos se guarden automaticamente para evitar exportarlos/importarlos manualmente, si vas a usar esta página, recuerda guardar tus proyectos exportándolos para evitar perderlos.
 
 ## ✨ Características Principales
 
@@ -99,6 +101,18 @@ Los estilos se implementan con CSS plano y Variables CSS para cambiar temas en t
    La aplicación se servirá en `http://localhost:5173` (o el puerto que indique Vite).
 
 ---
+
+## ✅ Por hacer
+
+* [ ] Agregar más opciones de personalización
+* [ ] Implementar guardado automático (sin necesidad de exportar/importar)
+* [ ] Añadir efectos de cursor en el HTML exportado
+* [ ] Incluir efectos de animación en palabras dentro del HTML exportado
+* [ ] Permitir insertar fotos, vídeos, enlaces de YouTube embebidos y archivos de audio
+* [ ] Crear una barra de herramientas para insertar fragmentos de Markdown fácilmente
+* [ ] Corregir bugs existentes
+* [ ] Diseñar un logo e iconos propios para sustituir los emojis
+
 
 ## 📜 Licencia
 
